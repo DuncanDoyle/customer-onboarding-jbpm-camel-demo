@@ -9,7 +9,14 @@
     <event-listeners/>
     <task-event-listeners/>
     <globals/>
-    <work-item-handlers/>
+    <work-item-handlers>
+        <work-item-handler>
+            <resolver>mvel</resolver>
+            <identifier>new org.apache.camel.component.jbpm.workitem.InOutCamelWorkItemHandler(runtimeManager);</identifier>
+            <parameters/>
+            <name>InOutLocalCamelConnector</name>
+        </work-item-handler>
+    </work-item-handlers>
     <environment-entries/>
     <configurations/>
     <required-roles/>
