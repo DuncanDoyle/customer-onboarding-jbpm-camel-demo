@@ -1,24 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bpmn2:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.omg.org/bpmn20" xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:bpsim="http://www.bpsim.org/schemas/1.0" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:drools="http://www.jboss.org/drools" id="_Yrk2EPSgEeigjJadIay5XA" xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL BPMN20.xsd http://www.jboss.org/drools drools.xsd http://www.bpsim.org/schemas/1.0 bpsim.xsd http://www.omg.org/spec/DD/20100524/DC DC.xsd http://www.omg.org/spec/DD/20100524/DI DI.xsd " exporter="jBPM Process Modeler" exporterVersion="2.0" targetNamespace="http://www.omg.org/bpmn20">
+<bpmn2:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.omg.org/bpmn20" xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:bpsim="http://www.bpsim.org/schemas/1.0" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:drools="http://www.jboss.org/drools" id="_-GCscPSgEeigjJadIay5XA" xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL BPMN20.xsd http://www.jboss.org/drools drools.xsd http://www.bpsim.org/schemas/1.0 bpsim.xsd http://www.omg.org/spec/DD/20100524/DC DC.xsd http://www.omg.org/spec/DD/20100524/DI DI.xsd " exporter="jBPM Process Modeler" exporterVersion="2.0" targetNamespace="http://www.omg.org/bpmn20">
   <bpmn2:itemDefinition id="_customerItem" structureRef="com.myspace.customer_onboarding.Customer"/>
   <bpmn2:itemDefinition id="__1A54164D-2BFD-4ACA-87A1-08C1FBDFDBD7_CamelEndpointIdInputXItem" structureRef="String"/>
+  <bpmn2:itemDefinition id="__1A54164D-2BFD-4ACA-87A1-08C1FBDFDBD7_CustomerInputXItem" structureRef="com.myspace.customer_onboarding.Customer"/>
   <bpmn2:itemDefinition id="__1A54164D-2BFD-4ACA-87A1-08C1FBDFDBD7_MessageOutputXItem" structureRef="java.lang.Object"/>
   <bpmn2:itemDefinition id="__1A54164D-2BFD-4ACA-87A1-08C1FBDFDBD7_ReponseOutputXItem" structureRef="java.lang.Object"/>
   <bpmn2:process id="customer-onboarding.customer-onboarding-process" drools:packageName="com.myspace.customer_onboarding" drools:version="1.0" drools:adHoc="false" name="customer-onboarding-process" isExecutable="true">
-    <bpmn2:documentation id="_Yrk2EfSgEeigjJadIay5XA"><![CDATA[]]></bpmn2:documentation>
+    <bpmn2:documentation id="_-GCscfSgEeigjJadIay5XA"><![CDATA[]]></bpmn2:documentation>
     <bpmn2:property id="customer" itemSubjectRef="_customerItem" name="customer"/>
     <bpmn2:sequenceFlow id="_5B6500A9-3EE3-46A1-8E32-6C55FDA9041D" sourceRef="_1A54164D-2BFD-4ACA-87A1-08C1FBDFDBD7" targetRef="_ADF77A88-4813-446D-A95E-A7743EE0AEC0">
-      <bpmn2:documentation id="_Yrk2EvSgEeigjJadIay5XA"><![CDATA[]]></bpmn2:documentation>
+      <bpmn2:documentation id="_-GCscvSgEeigjJadIay5XA"><![CDATA[]]></bpmn2:documentation>
     </bpmn2:sequenceFlow>
     <bpmn2:sequenceFlow id="_7C6E3543-EC9B-48ED-83C4-74A2F2B02C4A" sourceRef="_827EE9B2-53E9-4040-8B25-5CDFADB5AC53" targetRef="_1A54164D-2BFD-4ACA-87A1-08C1FBDFDBD7">
-      <bpmn2:documentation id="_Yrk2E_SgEeigjJadIay5XA"><![CDATA[]]></bpmn2:documentation>
+      <bpmn2:documentation id="_-GCsc_SgEeigjJadIay5XA"><![CDATA[]]></bpmn2:documentation>
     </bpmn2:sequenceFlow>
     <bpmn2:endEvent id="_ADF77A88-4813-446D-A95E-A7743EE0AEC0">
-      <bpmn2:documentation id="_Yrk2FPSgEeigjJadIay5XA"><![CDATA[]]></bpmn2:documentation>
+      <bpmn2:documentation id="_-GCsdPSgEeigjJadIay5XA"><![CDATA[]]></bpmn2:documentation>
       <bpmn2:incoming>_5B6500A9-3EE3-46A1-8E32-6C55FDA9041D</bpmn2:incoming>
     </bpmn2:endEvent>
     <bpmn2:task id="_1A54164D-2BFD-4ACA-87A1-08C1FBDFDBD7" drools:taskName="LocalInOutCamelConnector" name="Store Customer Data">
-      <bpmn2:documentation id="_Yrk2FfSgEeigjJadIay5XA"><![CDATA[]]></bpmn2:documentation>
+      <bpmn2:documentation id="_-GCsdfSgEeigjJadIay5XA"><![CDATA[]]></bpmn2:documentation>
       <bpmn2:extensionElements>
         <drools:metaData name="elementname">
           <drools:metaValue><![CDATA[Store Customer Data]]></drools:metaValue>
@@ -26,33 +27,39 @@
       </bpmn2:extensionElements>
       <bpmn2:incoming>_7C6E3543-EC9B-48ED-83C4-74A2F2B02C4A</bpmn2:incoming>
       <bpmn2:outgoing>_5B6500A9-3EE3-46A1-8E32-6C55FDA9041D</bpmn2:outgoing>
-      <bpmn2:ioSpecification id="_Yrk2FvSgEeigjJadIay5XA">
+      <bpmn2:ioSpecification id="_-GDTgPSgEeigjJadIay5XA">
         <bpmn2:dataInput id="_1A54164D-2BFD-4ACA-87A1-08C1FBDFDBD7_CamelEndpointIdInputX" drools:dtype="String" itemSubjectRef="__1A54164D-2BFD-4ACA-87A1-08C1FBDFDBD7_CamelEndpointIdInputXItem" name="CamelEndpointId"/>
+        <bpmn2:dataInput id="_1A54164D-2BFD-4ACA-87A1-08C1FBDFDBD7_CustomerInputX" drools:dtype="com.myspace.customer_onboarding.Customer" itemSubjectRef="__1A54164D-2BFD-4ACA-87A1-08C1FBDFDBD7_CustomerInputXItem" name="Customer"/>
         <bpmn2:dataOutput id="_1A54164D-2BFD-4ACA-87A1-08C1FBDFDBD7_MessageOutputX" drools:dtype="java.lang.Object" itemSubjectRef="__1A54164D-2BFD-4ACA-87A1-08C1FBDFDBD7_MessageOutputXItem" name="Message"/>
         <bpmn2:dataOutput id="_1A54164D-2BFD-4ACA-87A1-08C1FBDFDBD7_ReponseOutputX" drools:dtype="java.lang.Object" itemSubjectRef="__1A54164D-2BFD-4ACA-87A1-08C1FBDFDBD7_ReponseOutputXItem" name="Reponse"/>
-        <bpmn2:inputSet id="_YrldIPSgEeigjJadIay5XA">
+        <bpmn2:inputSet id="_-GDTgfSgEeigjJadIay5XA">
           <bpmn2:dataInputRefs>_1A54164D-2BFD-4ACA-87A1-08C1FBDFDBD7_CamelEndpointIdInputX</bpmn2:dataInputRefs>
+          <bpmn2:dataInputRefs>_1A54164D-2BFD-4ACA-87A1-08C1FBDFDBD7_CustomerInputX</bpmn2:dataInputRefs>
         </bpmn2:inputSet>
-        <bpmn2:outputSet id="_YrldIfSgEeigjJadIay5XA">
+        <bpmn2:outputSet id="_-GDTgvSgEeigjJadIay5XA">
           <bpmn2:dataOutputRefs>_1A54164D-2BFD-4ACA-87A1-08C1FBDFDBD7_MessageOutputX</bpmn2:dataOutputRefs>
           <bpmn2:dataOutputRefs>_1A54164D-2BFD-4ACA-87A1-08C1FBDFDBD7_ReponseOutputX</bpmn2:dataOutputRefs>
         </bpmn2:outputSet>
       </bpmn2:ioSpecification>
-      <bpmn2:dataInputAssociation id="_YrldIvSgEeigjJadIay5XA">
+      <bpmn2:dataInputAssociation id="_-GDTg_SgEeigjJadIay5XA">
         <bpmn2:targetRef>_1A54164D-2BFD-4ACA-87A1-08C1FBDFDBD7_CamelEndpointIdInputX</bpmn2:targetRef>
-        <bpmn2:assignment id="_YrldI_SgEeigjJadIay5XA">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_YrldJPSgEeigjJadIay5XA"><![CDATA[storeCustomer]]></bpmn2:from>
-          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_YrldJfSgEeigjJadIay5XA">_1A54164D-2BFD-4ACA-87A1-08C1FBDFDBD7_CamelEndpointIdInputX</bpmn2:to>
+        <bpmn2:assignment id="_-GDThPSgEeigjJadIay5XA">
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_-GDThfSgEeigjJadIay5XA"><![CDATA[storeCustomer]]></bpmn2:from>
+          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_-GDThvSgEeigjJadIay5XA">_1A54164D-2BFD-4ACA-87A1-08C1FBDFDBD7_CamelEndpointIdInputX</bpmn2:to>
         </bpmn2:assignment>
+      </bpmn2:dataInputAssociation>
+      <bpmn2:dataInputAssociation id="_-GDTh_SgEeigjJadIay5XA">
+        <bpmn2:sourceRef>customer</bpmn2:sourceRef>
+        <bpmn2:targetRef>_1A54164D-2BFD-4ACA-87A1-08C1FBDFDBD7_CustomerInputX</bpmn2:targetRef>
       </bpmn2:dataInputAssociation>
     </bpmn2:task>
     <bpmn2:startEvent id="_827EE9B2-53E9-4040-8B25-5CDFADB5AC53">
-      <bpmn2:documentation id="_YrldJvSgEeigjJadIay5XA"><![CDATA[]]></bpmn2:documentation>
+      <bpmn2:documentation id="_-GDTiPSgEeigjJadIay5XA"><![CDATA[]]></bpmn2:documentation>
       <bpmn2:outgoing>_7C6E3543-EC9B-48ED-83C4-74A2F2B02C4A</bpmn2:outgoing>
     </bpmn2:startEvent>
   </bpmn2:process>
-  <bpmndi:BPMNDiagram id="_YrldJ_SgEeigjJadIay5XA">
-    <bpmndi:BPMNPlane id="_YrldKPSgEeigjJadIay5XA" bpmnElement="customer-onboarding.customer-onboarding-process">
+  <bpmndi:BPMNDiagram id="_-GDTifSgEeigjJadIay5XA">
+    <bpmndi:BPMNPlane id="_-GDTivSgEeigjJadIay5XA" bpmnElement="customer-onboarding.customer-onboarding-process">
       <bpmndi:BPMNShape id="shape__827EE9B2-53E9-4040-8B25-5CDFADB5AC53" bpmnElement="_827EE9B2-53E9-4040-8B25-5CDFADB5AC53">
         <dc:Bounds height="56.0" width="56.0" x="105.0" y="210.0"/>
       </bpmndi:BPMNShape>
@@ -72,19 +79,19 @@
       </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
-  <bpmn2:relationship id="_YrldKfSgEeigjJadIay5XA" type="BPSimData">
+  <bpmn2:relationship id="_-GDTi_SgEeigjJadIay5XA" type="BPSimData">
     <bpmn2:extensionElements>
       <bpsim:BPSimData>
         <bpsim:Scenario xsi:type="bpsim:Scenario" id="default" name="Simulationscenario">
           <bpsim:ScenarioParameters xsi:type="bpsim:ScenarioParameters"/>
-          <bpsim:ElementParameters xsi:type="bpsim:ElementParameters" elementRef="_827EE9B2-53E9-4040-8B25-5CDFADB5AC53" id="_YrldKvSgEeigjJadIay5XA">
+          <bpsim:ElementParameters xsi:type="bpsim:ElementParameters" elementRef="_827EE9B2-53E9-4040-8B25-5CDFADB5AC53" id="_-GDTjPSgEeigjJadIay5XA">
             <bpsim:TimeParameters xsi:type="bpsim:TimeParameters">
               <bpsim:ProcessingTime xsi:type="bpsim:Parameter">
                 <bpsim:NormalDistribution mean="0.0" standardDeviation="0.0"/>
               </bpsim:ProcessingTime>
             </bpsim:TimeParameters>
           </bpsim:ElementParameters>
-          <bpsim:ElementParameters xsi:type="bpsim:ElementParameters" elementRef="_1A54164D-2BFD-4ACA-87A1-08C1FBDFDBD7" id="_YrldK_SgEeigjJadIay5XA">
+          <bpsim:ElementParameters xsi:type="bpsim:ElementParameters" elementRef="_1A54164D-2BFD-4ACA-87A1-08C1FBDFDBD7" id="_-GDTjfSgEeigjJadIay5XA">
             <bpsim:TimeParameters xsi:type="bpsim:TimeParameters">
               <bpsim:ProcessingTime xsi:type="bpsim:Parameter">
                 <bpsim:NormalDistribution mean="0.0" standardDeviation="0.0"/>
@@ -107,7 +114,7 @@
         </bpsim:Scenario>
       </bpsim:BPSimData>
     </bpmn2:extensionElements>
-    <bpmn2:source>_Yrk2EPSgEeigjJadIay5XA</bpmn2:source>
-    <bpmn2:target>_Yrk2EPSgEeigjJadIay5XA</bpmn2:target>
+    <bpmn2:source>_-GCscPSgEeigjJadIay5XA</bpmn2:source>
+    <bpmn2:target>_-GCscPSgEeigjJadIay5XA</bpmn2:target>
   </bpmn2:relationship>
 </bpmn2:definitions>
