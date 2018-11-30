@@ -12,9 +12,9 @@
     <work-item-handlers>
         <work-item-handler>
             <resolver>mvel</resolver>
-            <identifier>new org.apache.camel.component.jbpm.workitem.InOutCamelWorkItemHandler(runtimeManager);</identifier>
+            <identifier>new org.apache.camel.component.jbpm.workitem.InOutCamelWorkItemHandler(runtimeManager);	</identifier>
             <parameters/>
-            <name>InOutLocalCamelConnector</name>
+            <name>LocalInOutCamelConnector</name>
         </work-item-handler>
     </work-item-handlers>
     <environment-entries/>
