@@ -79,6 +79,21 @@
      "displayName" : "Decision Task",
      "icon" : "defaultdecisionicon.png",
      "category" : "Decision tasks"
+   ],
+   
+    [
+     "name" : "InOutLocalCamelConnector",
+     "parameters" : [
+       "CamelEndpointId" : new StringDataType(),
+     ],
+     "results" : [
+        "Reponse" : new ObjectDataType(),
+        "Message": new ObjectDataType()
+     ],
+     "displayName" : "Local InOut Camel Connector",
+     "icon" : "defaultservicenodeicon.png",
+     "category" : "Camel tasks"
    ]
+   
 
 ]
