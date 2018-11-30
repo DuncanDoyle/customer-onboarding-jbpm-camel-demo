@@ -82,7 +82,7 @@
    ],
    
     [
-     "name" : "InOutLocalCamelConnector",
+     "name" : "LocalInOutCamelConnector",
      "parameters" : [
        "CamelEndpointId" : new StringDataType(),
      ],
