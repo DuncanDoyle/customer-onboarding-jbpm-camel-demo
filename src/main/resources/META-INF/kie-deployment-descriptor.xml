@@ -17,7 +17,14 @@
             <name>LocalInOutCamelConnector</name>
         </work-item-handler>
     </work-item-handlers>
-    <environment-entries/>
+    <environment-entries>
+        <environment-entry>
+            <resolver>mvel</resolver>
+            <identifier>new com.myspace.customer_onboarding.CustomCamelContextBuilder():</identifier>
+            <parameters/>
+            <name>CamelContextBuilder</name>
+        </environment-entry>
+    </environment-entries>
     <configurations/>
     <required-roles/>
     <remoteable-classes/>
