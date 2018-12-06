@@ -43,6 +43,6 @@
 	</marshal>
 	<to id="logNettyBodyWithComponentBeforePost" uri="log:org.ddoyle.jbpm.camel?level=WARN"/>
 	<log id="logNettyBodyBeforePost" message="Netty reponse body: ${out.body}" loggingLevel="WARN"/>
-        <to id="toPostCustomerFuse" uri="rest:post:id/{id}?host=localhost:8082/customer"/>
+        <to id="toPostCustomerFuse" uri="rest:put:id/{id}?host=localhost:8082/customer"/>
     </route>
 </routes>
