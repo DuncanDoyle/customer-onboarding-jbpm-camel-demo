@@ -9,20 +9,18 @@
         <setHeader headerName="Exchange.CONTENT_TYPE" id="_setHeaderContentType">
             <constant>application/json</constant>
         </setHeader>
+	<setHeader headerName="id" id="_setCustomerIdInHeader">
+		<simple>${body.getParameter("Customer").getContact()}</simple>
+	</setHeader>
         <setBody>
         	<simple>${null}</simple>
         </setBody>
 	<to id="logNettyBodyWithComponentBefore" uri="log:org.ddoyle.jbpm.camel?level=WARN"/>
 	<log id="logNettyBodyBefore" message="Netty reponse body: ${out.body}" loggingLevel="WARN"/>
-        <to id="toGetCustomerFuse" uri="rest:get:id/1?host=localhost:8082/customer"/>
+        <to id="toGetCustomerFuse" uri="rest:get:id/{id}?host=localhost:8082/customer"/>
 	<log id="logNettyInBody" message="Netty reponse in body: ${in.body}" loggingLevel="WARN"/>
 	<log id="logNettyOutBody" message="Netty reponse out body: ${out.body}" loggingLevel="WARN"/>
 	<to id="logNettyBodyWithComponent" uri="log:org.ddoyle.jbpm.camel?level=WARN"/>
 	<convertBodyTo type="java.lang.String"/>
-        <!-- Need to unmarshall into internal data format, otherwise marshalling back is done in base64 -->
-        <!--
-        <unmarshal id="_unmarshal1" ref="serializer"/>
-    	<to uri="log:org.ddoyle.jbpm.test?level=WARN"/>
-    	-->
     </route>
 </routes>
