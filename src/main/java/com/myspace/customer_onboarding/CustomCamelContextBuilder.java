@@ -13,7 +13,7 @@ public class CustomCamelContextBuilder implements CamelContextBuilder {
 
             @Override
             public void configure() throws Exception {
-                restConfiguration().component("http4");
+                restConfiguration().component("netty4-http");
             }
         };
 
