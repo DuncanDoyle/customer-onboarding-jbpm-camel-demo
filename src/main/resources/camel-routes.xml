@@ -36,10 +36,10 @@
         <setHeader headerName="Accept" id="_setHeader115">
             <constant>application/json</constant>
         </setHeader>
-        <setHeader headerName="Exchange.CONTENT_TYPE" id="_setHeaderContentTypePost">
+        <setHeader headerName="Exchange.CONTENT_TYPE" id="_setHeaderContentTypePut">
             <constant>application/json</constant>
         </setHeader>
-		<setHeader headerName="id" id="_setCustomerIdInHeaderPost">
+		<setHeader headerName="id" id="_setCustomerIdInHeaderPut">
 			<simple>${body.getParameter("Customer").getId()}</simple>
 		</setHeader>
         <setBody>
@@ -48,14 +48,14 @@
 		<marshal>
 			<json library="Jackson"/>
 		</marshal>
-		<to id="logNettyBodyWithComponentBeforePost" uri="log:org.ddoyle.jbpm.camel?level=WARN"/>
-		<log id="logNettyBodyBeforePost" message="Netty reponse body: ${out.body}" loggingLevel="WARN"/>
+		<to id="logNettyBodyWithComponentBeforePut" uri="log:org.ddoyle.jbpm.camel?level=WARN"/>
+		<log id="logNettyBodyBeforePut" message="Netty reponse body: ${out.body}" loggingLevel="WARN"/>
         <to id="toPutCustomerFuse" uri="rest:put:/{id}?host=localhost:8082/customer"/>
     </route>
     <route id="createNewCustomerRoute">
     <!-- Content-Type is set twice on the HTTP request ... no idea why .... -->
-        <from id="direct-storeCustomerRoute" uri="direct:storeCustomer"/>
-        <setHeader headerName="Accept" id="_setHeader115">
+        <from id="direct-newCustomerRoute" uri="direct:newCustomer"/>
+        <setHeader headerName="Accept" id="_setHeader116">
             <constant>application/json</constant>
         </setHeader>
         <setHeader headerName="Exchange.CONTENT_TYPE" id="_setHeaderContentTypePost">
