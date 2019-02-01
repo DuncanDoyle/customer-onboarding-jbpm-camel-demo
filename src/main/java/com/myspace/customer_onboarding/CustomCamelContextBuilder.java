@@ -23,6 +23,7 @@ public class CustomCamelContextBuilder implements CamelContextBuilder {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
+        camelContext.setApplicationContextClassLoader(this.getClass().getClassLoader());
         return camelContext;
 
     }
