@@ -10,14 +10,14 @@
             <constant>application/json</constant>
         </setHeader>
 	<setHeader headerName="id" id="_setCustomerIdInHeader">
-		<simple>${body.getParameter("Customer").getContact()}</simple>
+		<simple>${body.getParameter("CustomerID")}</simple>
 	</setHeader>
         <setBody>
         	<simple>${null}</simple>
         </setBody>
 	<to id="logNettyBodyWithComponentBefore" uri="log:org.ddoyle.jbpm.camel?level=WARN"/>
 	<log id="logNettyBodyBefore" message="Netty reponse body: ${out.body}" loggingLevel="WARN"/>
-        <to id="toGetCustomerFuse" uri="rest:get:id/{id}?host=localhost:8082/customer"/>
+        <to id="toGetCustomerFuse" uri="rest:get:/{id}?host=localhost:8082/customer"/>
 	<log id="logNettyInBody" message="Netty reponse in body: ${in.body}" loggingLevel="WARN"/>
 	<log id="logNettyOutBody" message="Netty reponse out body: ${out.body}" loggingLevel="WARN"/>
 	<to id="logNettyBodyWithComponent" uri="log:org.ddoyle.jbpm.camel?level=WARN"/>
@@ -40,7 +40,7 @@
             <constant>application/json</constant>
         </setHeader>
 	<setHeader headerName="id" id="_setCustomerIdInHeaderPost">
-		<simple>${body.getParameter("Customer").getContact()}</simple>
+		<simple>${body.getParameter("Customer").getId()}</simple>
 	</setHeader>
         <setBody>
         	<simple>${body.getParameter("Customer")}</simple>
@@ -50,6 +50,6 @@
 	</marshal>
 	<to id="logNettyBodyWithComponentBeforePost" uri="log:org.ddoyle.jbpm.camel?level=WARN"/>
 	<log id="logNettyBodyBeforePost" message="Netty reponse body: ${out.body}" loggingLevel="WARN"/>
-        <to id="toPostCustomerFuse" uri="rest:put:id/{id}?host=localhost:8082/customer"/>
+        <to id="toPostCustomerFuse" uri="rest:put:/{id}?host=localhost:8082/customer"/>
     </route>
 </routes>
