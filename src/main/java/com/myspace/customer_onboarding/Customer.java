@@ -9,12 +9,12 @@ public class Customer implements java.io.Serializable {
 
 	static final long serialVersionUID = 1L;
 
-	@org.kie.api.definition.type.Label(value = "Name")
+	@org.kie.api.definition.type.Label("Name")
 	private java.lang.String name;
-	@org.kie.api.definition.type.Label(value = "Age")
+	@org.kie.api.definition.type.Label("Age")
 	private java.lang.String age;
-	@org.kie.api.definition.type.Label(value = "Contact")
-	private java.lang.String contact;
+	@org.kie.api.definition.type.Label(value = "ID")
+	private java.lang.String id;
 
 	public Customer() {
 	}
@@ -35,19 +35,19 @@ public class Customer implements java.io.Serializable {
 		this.age = age;
 	}
 
-	public java.lang.String getContact() {
-		return this.contact;
+	public java.lang.String getId() {
+		return this.id;
 	}
 
-	public void setContact(java.lang.String contact) {
-		this.contact = contact;
+	public void setId(java.lang.String id) {
+		this.id = id;
 	}
 
 	public Customer(java.lang.String name, java.lang.String age,
-			java.lang.String contact) {
+			java.lang.String id) {
 		this.name = name;
 		this.age = age;
-		this.contact = contact;
+		this.id = id;
 	}
 
 }
