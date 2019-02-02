@@ -9,27 +9,18 @@
         <setHeader headerName="Exchange.CONTENT_TYPE" id="_setHeaderContentType">
             <constant>application/json</constant>
         </setHeader>
-	<setHeader headerName="id" id="_setCustomerIdInHeader">
-		<simple>${body.getParameter("CustomerID")}</simple>
-	</setHeader>
+		<setHeader headerName="id" id="_setCustomerIdInHeader">
+			<simple>${body.getParameter("CustomerID")}</simple>
+		</setHeader>
         <setBody>
         	<simple>${null}</simple>
         </setBody>
-	<to id="logNettyBodyWithComponentBefore" uri="log:org.ddoyle.jbpm.camel?level=WARN"/>
-	<log id="logNettyBodyBefore" message="Netty reponse body: ${out.body}" loggingLevel="WARN"/>
         <to id="toGetCustomerFuse" uri="rest:get:/{id}?host=localhost:8082/customer"/>
-	<log id="logNettyInBody" message="Netty reponse in body: ${in.body}" loggingLevel="WARN"/>
-	<log id="logNettyOutBody" message="Netty reponse out body: ${out.body}" loggingLevel="WARN"/>
-	<to id="logNettyBodyWithComponent" uri="log:org.ddoyle.jbpm.camel?level=WARN"/>
-	<log id="logDebugBeforeConversion" message="Before response conversion debug!!!!" loggingLevel="WARN"/>
-	<convertBodyTo type="java.lang.String"/>
-	<to id="logNettyBodyWithComponentAfterConversion" uri="log:org.ddoyle.jbpm.camel?level=WARN"/>
-	<unmarshal>
-		<json library="Jackson" unmarshalTypeName="com.myspace.customer_onboarding.Customer"/>
-	</unmarshal>
-	<log id="logDebugAfterConversion" message="After response conversion debug!!!!" loggingLevel="WARN"/>
-	<to id="logNettyBodyWithComponentAfterUnmarshal" uri="log:org.ddoyle.jbpm.camel?level=WARN"/>
-    </route>
+		<convertBodyTo type="java.lang.String"/>
+		<unmarshal>
+			<json library="Jackson" unmarshalTypeName="com.myspace.customer_onboarding.Customer"/>
+		</unmarshal>
+	</route>
     <route id="storeCustomerRoute">
         <!-- Content-Type is set twice on the HTTP request ... no idea why .... -->
         <from id="direct-storeCustomerRoute" uri="direct:storeCustomer"/>
@@ -48,8 +39,6 @@
 		<marshal>
 			<json library="Jackson"/>
 		</marshal>
-		<to id="logNettyBodyWithComponentBeforePut" uri="log:org.ddoyle.jbpm.camel?level=WARN"/>
-		<log id="logNettyBodyBeforePut" message="Netty reponse body: ${out.body}" loggingLevel="WARN"/>
         <to id="toPutCustomerFuse" uri="rest:put:/{id}?host=localhost:8082/customer"/>
     </route>
     <route id="createNewCustomerRoute">
@@ -70,8 +59,6 @@
 		<marshal>
 			<json library="Jackson"/>
 		</marshal>
-		<to id="logNettyBodyWithComponentBeforePost" uri="log:org.ddoyle.jbpm.camel?level=WARN"/>
-		<log id="logNettyBodyBeforePost" message="Netty reponse body: ${out.body}" loggingLevel="WARN"/>
-        <to id="toPostCustomerFuse" uri="rest:post:?host=localhost:8082/customer"/>
+		<to id="toPostCustomerFuse" uri="rest:post:?host=localhost:8082/customer"/>
    </route>
 </routes>
